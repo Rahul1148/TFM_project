@@ -1,4 +1,5 @@
 # TFM_project
+<<<<<<< HEAD
 
 ## Contents
     1.**Introduction of Trustzone**       
@@ -13,3 +14,6 @@
     10.**Resources**
 
 
+=======
+**introduction**
+>>>>>>> ae12cf10949c67bce214f2ad6c9a103896c4ce79
