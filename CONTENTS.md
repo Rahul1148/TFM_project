@@ -30,6 +30,16 @@ CONTENTS
    3.Configuration
 
     3.1 Firmware framework model
+       -> The selection of the runtime model is dependent upon the TF-M profiles:
+        i. Small profile or Medium ARoT-less profile: SFN model
+        ii.Medium or large profiles: IPC model
+
+       -> For devices with small memory sizes and lower processing performance, the SFN model is better 
+       as it has a lower software execution overhead. It is the default model used for a small profile. 
+       However, SFN is available only for isolation type 1. If the project requires isolation type 2 or type 3, the IPC model is required.
+
+       -> The IPC model provides stronger software isolation capability and is more suitable for devices with multiple processors
+
        3.1.1 inter_process communication(IPC)
        ->In this backend, the SPM and each Secure Partition have their own execution contexts, which is required to support the IPC model Secure Partitions. This also enables the SPM to provide higher isolation levels. This SPM backend acts like a multiple-process system. It can also adopt SFN model Secure Partitions.
 
@@ -59,7 +69,8 @@ CONTENTS
   
    4.interface mechanism
         ->the actual interface between Secure and Non-secure program images are reduced to a few   interface calls based on the PSA Firmware Framework-M (FF-M) specification. As a result, when creating a Non-secure software project that utilizes the Secure APIs, the project needs to include a few C files to handle the redirection of secure API calls
-       ->accessin links for c files  :- 
+
+       ->accessin links for c files 
         i. https://git.trustedfirmware.org/TF-M/trusted-firmware-m.git/tree/interface/src
         ii. https://git.trustedfirmware.org/TF-M/trusted-firmware-m.git/tree/interface/include  
 
@@ -74,7 +85,9 @@ CONTENTS
           ii.Implementation Defined Attribution Unit (IDAU) 
 
     4.2 Non secure API interface mechanism
+
         ->If the mutex wrapper is not used, and if a Non-secure code calls a Secure API when another secure API is still in progress (e.g. started by another Non-secure thread), the TF-M API code would return a fail status. Thus, the mutex wrapper is added to make the Secure API mechanism RTOS friendly (By delaying a new Secure API call until the on-going Secure-API call is completed)
+        
         ->The C codes in the Non-secure interface directory also contains a file called:-tfm_psa_ns_connection_api.c. This file provides
          i.psa_connect() – for starting an API 
          ii.psa_close() – for disconnecting
