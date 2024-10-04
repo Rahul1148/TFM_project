@@ -92,6 +92,9 @@ CONTENTS
          i.psa_connect() – for starting an API 
          ii.psa_close() – for disconnecting
         ->This is only needed when the secure firmware provides connection-based Root-of-Trust (RoT) services. 
-   8.OS interface
-   9.Secure boot support
-   10.Resources
+   5.OS interface
+   -> based on secure or non secue world we need to configuration of memory,task,interrupt,ipc.
+   -> 
+   6.Secure boot support
+
+  
