@@ -1,7 +1,7 @@
 CONTENTS 
 
 
-   1.Introduction of Trustzone
+  - 1.Introduction of Trustzone
    <br>
       ->TrustZone provides hardware isolation while inteaction between application code and firware
       <br> 
@@ -29,9 +29,9 @@ CONTENTS
       ->hardware acceleration for cryptographic operations, enhancing performance for security-sensitive tasks.
 
 
-   2.What is Trusted Firmware-M
+   -2.What is Trusted Firmware-M
 
-   3.Configuration
+  - 3.Configuration
 
     3.1 Firmware framework model
        -> The selection of the runtime model is dependent upon the TF-M profiles:
@@ -71,7 +71,7 @@ CONTENTS
        3.3.5 large
         ->supported header files :-crypto_config_profile_large.h,tfm_mbedcrypto_config_profile_large.h.
   
-   4.interface mechanism
+  - 4.interface mechanism
 
         ->the actual interface between Secure and Non-secure program images are reduced to a few   interface calls based on the PSA Firmware Framework-M (FF-M) specification. As a result, when creating a Non-secure software project that utilizes the Secure APIs, the project needs to include a few C files to handle the redirection of secure API calls
         <br>
@@ -98,6 +98,4 @@ CONTENTS
          i.psa_connect() – for starting an API 
          ii.psa_close() – for disconnecting
         ->This is only needed when the secure firmware provides connection-based Root-of-Trust (RoT) services. 
-   8.OS interface
-   9.Secure boot support
-   10.Resources
+   -5.Secure boot support
