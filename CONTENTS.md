@@ -2,9 +2,13 @@ CONTENTS
 
 
    1.Introduction of Trustzone
-      ->TrustZone provides hardware isolation while inteaction between application code and firware 
+   <br>
+      ->TrustZone provides hardware isolation while inteaction between application code and firware
+      <br> 
       ->TrustZone is a security developed by a ARM
+      <br>
 	  ->Its provides a trusted exicution environment(TEE) for secure applications
+    <br>
 
     1.1 Separation of environments 
       ->TrustZone dived system into two types 
@@ -68,10 +72,12 @@ CONTENTS
         ->supported header files :-crypto_config_profile_large.h,tfm_mbedcrypto_config_profile_large.h.
   
    4.interface mechanism
-        ->the actual interface between Secure and Non-secure program images are reduced to a few   interface calls based on the PSA Firmware Framework-M (FF-M) specification. As a result, when creating a Non-secure software project that utilizes the Secure APIs, the project needs to include a few C files to handle the redirection of secure API calls
 
+        ->the actual interface between Secure and Non-secure program images are reduced to a few   interface calls based on the PSA Firmware Framework-M (FF-M) specification. As a result, when creating a Non-secure software project that utilizes the Secure APIs, the project needs to include a few C files to handle the redirection of secure API calls
+        <br>
        ->accessin links for c files 
         i. https://git.trustedfirmware.org/TF-M/trusted-firmware-m.git/tree/interface/src
+        <br>
         ii. https://git.trustedfirmware.org/TF-M/trusted-firmware-m.git/tree/interface/include  
 
     4.1 Secure API interface mechanism
